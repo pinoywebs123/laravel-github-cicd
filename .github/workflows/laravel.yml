@@ -31,7 +31,7 @@ jobs:
         DB_DATABASE: database/database.sqlite
       run: vendor/bin/phpunit
     - name: get ssh 
-      run: eval ${{ secrets.PRIVATE_KEY }}
+      run: eval "$(ssh-agent -s)"
     - name: add ssh 
       run: ssh-add
     - name: connect ssh   
