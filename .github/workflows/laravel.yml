@@ -32,7 +32,5 @@ jobs:
       run: vendor/bin/phpunit
     - name: get ssh 
       run: eval "$(ssh-agent -s)"
-    - name: add ssh 
-      run: ssh-add ~/.ssh/${{ secrets.PRIVATE_KEY }}
     - name: connect ssh   
       run: ssh -i ${{ secrets.PRIVATE_KEY }} ubuntu@ec2-13-229-232-60.ap-southeast-1.compute.amazonaws.com
