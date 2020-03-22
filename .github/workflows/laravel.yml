@@ -30,5 +30,6 @@ jobs:
         DB_CONNECTION: sqlite
         DB_DATABASE: database/database.sqlite
       run: vendor/bin/phpunit
-    - name: Connecting AWS 
+    - name: Run Shell 
+      run: ./deployment.sh
       run: ssh -i "${{ secrets.PRIVATE_KEY }}" ubuntu@ec2-13-229-232-60.ap-southeast-1.compute.amazonaws.com  
