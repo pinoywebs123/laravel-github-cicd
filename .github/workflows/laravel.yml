@@ -32,5 +32,9 @@ jobs:
       run: vendor/bin/phpunit
     - name: get ssh 
       run: eval "$(ssh-agent -s)"
-    - name: connect ssh   
-      run: ssh -i $HOME/cicd.pem ubuntu@ec2-13-229-232-60.ap-southeast-1.compute.amazonaws.com
+    - name: connect ssh  
+      run : eval `ssh-agent`
+    - name: add
+      run: ssh-add - <<< "${{ secrets.PRIVATE_KEY }}"   
+    - name: Tunnel Server  
+      run: ssh ubuntu@ec2-13-229-232-60.ap-southeast-1.compute.amazonaws.com
