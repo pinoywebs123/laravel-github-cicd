@@ -1,12 +1,5 @@
 stages:
   - building
-  - testing
-
-on:
-  push:
-    branches: [ master ]
-  pull_request:
-    branches: [ master ]
 
 composer:
   stage: preparation
