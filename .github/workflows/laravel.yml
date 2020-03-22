@@ -4,7 +4,6 @@ stages:
   - preparation
   - building
   - testing
-
 on:
   push:
     branches: [ master ]
@@ -17,7 +16,6 @@ jobs:
     runs-on: ubuntu-latest
     
     steps:
-    stage: building  
     - uses: actions/checkout@v2
     - name: Copy .env
       run: php -r "file_exists('.env') || copy('.env.example', '.env');"
@@ -31,7 +29,6 @@ jobs:
       run: |
         mkdir -p database
         touch database/database.sqlite
-    stage: testing     
     - name: Execute tests (Unit and Feature tests) via PHPUnit
       env:
         DB_CONNECTION: sqlite
