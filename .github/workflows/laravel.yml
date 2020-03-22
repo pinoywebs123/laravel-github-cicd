@@ -1,9 +1,5 @@
 name: Laravel
 
-stages:
-  - preparation
-  - building
-  - testing
 on:
   push:
     branches: [ master ]
